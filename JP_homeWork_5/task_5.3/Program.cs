@@ -12,7 +12,7 @@ double[] GetArray()
    
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = Convert.ToDouble(random.Next(-100, 100)/10.0);
+        array[i] = random.NextDouble();                        
     }
 
     return array;
@@ -52,9 +52,9 @@ void PrintArray(double[] array)
     {
         
         {
-           Console.Write($"{array[i]}, ");
+           Console.Write($"{array[i]}");
         }
-       Console.WriteLine();
+      Console.WriteLine();
     } 
     
 }
