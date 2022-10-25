@@ -5,15 +5,14 @@
 //Console.WriteLine("Введите размер массива n: ");
 //double n = double.Parse(Console.ReadLine());
 
-double[] CreateArray()
+double[] GetArray()
 {
+     double[] array = new double[5];
     Random random = new Random();
-    double[] array = new double[5];
-
-    for (int i = 0; i < array.Length; i++)
+   
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        array[i] = random.NextDouble();
-        { Console.WriteLine($"{array[i]}, "); }
+        array[i] = random.NextDouble();     
     }
 
     return array;
@@ -23,7 +22,7 @@ double GetMinElementsArray(double[] array)
 {
     double min = array[0];
 
-    for (int i = 1; i < array.Length; i++)
+    for (int i = 1; i < array.GetLength(0); i++)
     {
         if (min > array[i])
         {
@@ -37,7 +36,7 @@ double GetMaxElementsArray(double[] array)
 {
     double max = array[0];
 
-    for (int i = 1; i < array.Length; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
         if (max < array[i])
         {
@@ -47,11 +46,26 @@ double GetMaxElementsArray(double[] array)
     return max;
 }
 
-double[] array = CreateArray();
+void PrintArray(double[] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        
+        {
+           Console.WriteLine($"{array[i]}, ");
+        }
+       Console.WriteLine();
+    } 
+    
+}
+double [] array = GetArray();
+
+PrintArray(array);
+
 
 Console.WriteLine($"Минимальный элемент: " + GetMinElementsArray(array));
 Console.WriteLine($"Максимальный элемент: " + GetMaxElementsArray(array));
-Console.WriteLine($"Разница между максимальным и минимальным элементом:" 
+Console.WriteLine($"Разница между максимальным и минимальным элементом:"
                   + (GetMaxElementsArray(array) - GetMinElementsArray(array)));
 
 
