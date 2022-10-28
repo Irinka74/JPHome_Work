@@ -5,3 +5,14 @@
 //34(1,0,0) 41(1,1,0)
 //27(0,0,1) 90(0,1,1)
 //26(1,0,1) 55(1,1,1)
+Console.Write("введите количество строк m: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("введите количество строк n: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("введите количество строк z: ");
+int z = Convert.ToInt32(Console.ReadLine());
+
+int[,,] array3d = new int[m,n,z];
+

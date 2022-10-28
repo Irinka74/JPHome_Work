@@ -1,18 +1,19 @@
-﻿// Задача 38: Задайте массив вещественных чисел. random.Next(1,10); 
+﻿// Задача 38: Задайте массив вещественных чисел. 
 //Найдите разницу между максимальным и минимальным элементов массива. [3 7 22 2 78] -> 76
 
 
 Console.Write("Введите размер массива n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
+
 double[] GetArray()
 {
      double[] array = new double[n];
     Random random = new Random();
    
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        array[i] = random.NextDouble();                        
+        array[i] = random.NextDouble();  ;                        
     }
 
     return array;
@@ -22,7 +23,7 @@ double GetMinElementsArray(double[] array)
 {
     double min = array[0];
 
-    for (int i = 1; i < array.Length; i++)
+    for (int i = 1; i < array.GetLength(0); i++)
     {
         if (min > array[i])
         {
@@ -36,7 +37,7 @@ double GetMaxElementsArray(double[] array)
 {
     double max = array[0];
 
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
         if (max < array[i])
         {
@@ -48,7 +49,7 @@ double GetMaxElementsArray(double[] array)
 
 void PrintArray(double[] array)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
         
         {

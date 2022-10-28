@@ -20,8 +20,7 @@ int[,] GetArray(int m, int n)
     }
     return array;
 }
-
-
+/*?
 
     Console.Write("Введите позицию элемента a,b  ");
     int a = Convert.ToInt32(Console.ReadLine());
@@ -31,10 +30,12 @@ int[,] GetArray(int m, int n)
     {
        Console.WriteLine($"такого числа в массиве нет ");
     }
+    else
+    {
 
+    }
 
-
-
+/*
 
 void PrintArray(int[,] array)
 {
@@ -49,5 +50,5 @@ void PrintArray(int[,] array)
 }
 int[,] array = GetArray(m, n);
 PrintArray(array);
-//PrintArray(SeekNumbersArray(array));
+PrintArray(SeekNumbersArray(array));
  

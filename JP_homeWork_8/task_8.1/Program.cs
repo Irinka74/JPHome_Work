@@ -9,10 +9,10 @@
 //9 5 3 2
 //8 4 4 2
 
-Console.WriteLine("введите количество строк m: ");
+Console.Write("введите количество строк m: ");
 int m = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("введите количество строк n: ");
+Console.Write("введите количество строк n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
 int[,] GetArray()
@@ -62,7 +62,7 @@ void PrintArray(int[,] array)
         Console.WriteLine();
     }
 }
-int[,] array1 = GetArray();
-PrintArray(array1);
+int[,] array = GetArray();
+PrintArray(array);
 Console.WriteLine();
-PrintArray(SortArrayLines(array1));
+PrintArray(SortArrayLines(array));

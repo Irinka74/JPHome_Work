@@ -22,8 +22,10 @@ else
         Console.WriteLine("прямые параллельны:");
     else
     {
-        double x = ((b2 - b1) / (k1 - k2));  //(b2 - b1)!=0
+        double x = ((b2 - b1) / (k1 - k2));                                      //(b2 - b1)!=0
         double y = (k1 * x + b1);
+        Math.Round (x,2);
+        Math.Round (y,2);
         Console.WriteLine($"точка пересечения двух прямых: ({x};{y})");
     }
 
