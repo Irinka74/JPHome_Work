@@ -38,8 +38,8 @@ int[,] array = new int[m, n];
         Console.Write(avg + "; ");
     }
     Console.WriteLine();
-    
-PrintArray(array);
+
+    PrintArray(array);
 }
 void PrintArray(int[,] array)
 {
