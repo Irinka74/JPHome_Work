@@ -3,4 +3,15 @@
 //M = 1; N = 15 -> 120
 //M = 4; N = 8. -> 30
 
+Console.WriteLine("Введите M:");
+int m = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите N:");
+int n = int.Parse(Console.ReadLine());
 
+int FundSum(int m, int n)
+{
+    if (m == n)
+        return n;
+    return n + FundSum(m, n - 1);
+}
+Console.WriteLine($"Сумма элементов = {FundSum(m, n)}");

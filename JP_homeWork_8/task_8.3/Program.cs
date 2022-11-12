@@ -1,76 +1,64 @@
 ﻿// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-//Например, даны 2 матрицы:
-//2 4 | 3 4
-//3 2 | 3 3
-//Результирующая матрица будет:
-//18 20
-//15 18
 
-
-
-Console.Write("Количество строк матрицы A:    ");
+Console.Write("Количество строк матрицы A: ");
 int n = int.Parse(Console.ReadLine());
 Console.Write("Количество столбцов матрицы A: ");
 int m = int.Parse(Console.ReadLine());
-
-int[,] MatrixA()
-
+int[,] matrixA = new int[n, m];
+Random random = new Random();
+for (int i = 0; i < n; i++)
 {
-    int[,] matrixA = new int[n, m];
-    Random rnd = new Random();
-    for (int i = 0; i < n; i++)
+    for (int j = 0; j < m; j++)
     {
-        for (int j = 0; j < m; j++)
-        {
-            matrixA[i, j] = rnd.Next(1, 10);
-        }
+        matrixA[i, j] = random.Next(1, 10);
     }
-    return matrixA;
 }
 
 Console.Write("Количество строк матрицы B: ");
 int x = int.Parse(Console.ReadLine());
 Console.Write("Количество столбцов матрицы B: ");
 int y = int.Parse(Console.ReadLine());
-
-int[,] MatrixB()
-
+int[,] matrixB = new int[x, y];
+Random rand = new Random();
+for (int i = 0; i < x; i++)
 {
-    int[,] matrixB = new int[x, y];
-    Random rnd = new Random();
-    for (int i = 0; i < x; i++)
+    for (int j = 0; j < y; j++)
     {
-        for (int j = 0; j < y; j++)
+        matrixB[i, j] = rand.Next(1, 10);
+    }
+}
+Console.WriteLine("\nМатрица A:");
+Print(matrixA);
+Console.WriteLine("\nМатрица B:");
+Print(matrixB);
+Console.WriteLine("\nМатрица C:");
+int[,] C = Multiplication(matrixA, matrixB);
+Print(C);
+int[,] Multiplication(int[,] A, int[,] B)
+{
+    if (A.GetLength(1) != B.GetLength(0)) Console.WriteLine("Матрицы нельзя умножить");
+    int[,] result = new int[A.GetLength(0), B.GetLength(1)];
+    for (int i = 0; i < A.GetLength(0); i++)
+    {
+        for (int j = 0; j < B.GetLength(1); j++)
         {
-            matrixB[i, j] = rnd.Next(1, 10);
+            for (int k = 0; k < B.GetLength(0); k++)
+            {
+                result[i, j] += A[i, k] * B[k, j];
+            }
         }
     }
-    return matrixB;
+    return result;
 }
-//   Умножение не возможно! Количество столбцов первой матрицы не равно количеству строк второй матрицы.");
-
-int[,] MatrixC()
+void Print(int[,] A)
 {
-/*
-   
-
-
-
-
-    return matrixC;
-}
-void PrintArray(int[,] matrixC)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < A.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < A.GetLength(1); j++)
         {
-            Console.Write($"{array[i, j]} ");
+            Console.Write("{0} ", A[i, j]);
         }
         Console.WriteLine();
     }
-
 }
-int[,] array = Matri(();
-PrintArray(array);
-PrintArray(MultipiyMatrixC(array));
+
