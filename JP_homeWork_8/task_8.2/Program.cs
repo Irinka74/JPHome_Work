@@ -14,7 +14,6 @@ for (int i = 0; i < array.GetLength(0); i++)
         array[i, j] = random.Next(1, 10);
     }
 }
-
     UpdateArray(array);
     int minSumLine = 0;
     int sumLine = SumLineElements(array, 0);
