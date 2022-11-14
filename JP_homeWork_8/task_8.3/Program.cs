@@ -13,7 +13,6 @@ for (int i = 0; i < n; i++)
         matrixA[i, j] = random.Next(1, 10);
     }
 }
-
 Console.Write("Количество строк матрицы B: ");
 int x = int.Parse(Console.ReadLine());
 Console.Write("Количество столбцов матрицы B: ");
@@ -27,11 +26,11 @@ for (int i = 0; i < x; i++)
         matrixB[i, j] = rand.Next(1, 10);
     }
 }
-Console.WriteLine("\nМатрица A:");
+Console.WriteLine("Матрица A:");
 Print(matrixA);
-Console.WriteLine("\nМатрица B:");
+Console.WriteLine("Матрица B:");
 Print(matrixB);
-Console.WriteLine("\nМатрица C:");
+Console.WriteLine("Матрица C:");
 int[,] C = Multiplication(matrixA, matrixB);
 Print(C);
 int[,] Multiplication(int[,] A, int[,] B)
